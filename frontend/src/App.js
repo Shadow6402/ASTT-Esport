@@ -40,10 +40,33 @@ const HomePage = () => {
 };
 
 // Composants fictifs pour les routes
-const Login = () => <div className="page-container"><h1>Connexion</h1><p>Page de connexion en cours de développement</p></div>;
-const Register = () => <div className="page-container"><h1>Inscription</h1><p>Page d'inscription en cours de développement</p></div>;
-const Dashboard = () => <div className="page-container"><h1>Tableau de bord</h1><p>Tableau de bord en cours de développement</p></div>;
-const NotFound = () => <div className="page-container"><h1>404</h1><p>Page non trouvée</p></div>;
+const Login = () => (
+  <div className="page-container">
+    <h1>Connexion</h1>
+    <p>Page de connexion en cours de développement</p>
+  </div>
+);
+
+const Register = () => (
+  <div className="page-container">
+    <h1>Inscription</h1>
+    <p>Page d'inscription en cours de développement</p>
+  </div>
+);
+
+const Dashboard = () => (
+  <div className="page-container">
+    <h1>Tableau de bord</h1>
+    <p>Tableau de bord en cours de développement</p>
+  </div>
+);
+
+const NotFound = () => (
+  <div className="page-container">
+    <h1>404</h1>
+    <p>Page non trouvée</p>
+  </div>
+);
 
 function App() {
   return (
