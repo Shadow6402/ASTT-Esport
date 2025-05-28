@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Connexion à la base de données MongoDB
 // En mode développement ou test, on peut désactiver la connexion MongoDB
-if (process.env.NODE_ENV === 'production' && process.env.SKIP_MONGODB !== 'true') {
+if (process.env.NODE_ENV === 'production' && process.env.SKIP_MONGODB !== 'false') {
   mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log('Connexion à MongoDB établie avec succès'))
     .catch(err => console.error('Erreur de connexion à MongoDB:', err));
