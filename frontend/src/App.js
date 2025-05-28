@@ -1,36 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './assets/styles/main.css';
 
 // Page d'accueil personnalisée
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
-    // Simuler un chargement
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
-    
     return () => clearTimeout(timer);
   }, []);
-  
+
   return (
     <div className="loading-container">
       <div className="network-bg"></div>
       <div className="particles" id="particles"></div>
-      
+
       <div className="logo-container">
         <img src="/logo.png" alt="Logo ASTT E-sport VR" className="logo" />
       </div>
-      
+
       <h1 className="app-title">ASTT E-sport VR</h1>
       <p className="app-subtitle">Plateforme de gestion des membres et distribution des codes d'accès</p>
-      
+
       <div className="loading-bar">
         <div className="loading-progress" style={{ width: loading ? '70%' : '100%' }}></div>
       </div>
-      
+
       {!loading && (
         <div className="action-buttons">
           <a href="/login" className="action-button login">Connexion</a>
@@ -49,16 +47,14 @@ const NotFound = () => <div className="page-container"><h1>404</h1><p>Page non t
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/404" element={<NotFound />} />
-        <Route path="*" element={<Navigate to="/404" />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/404" element={<NotFound />} />
+      <Route path="*" element={<Navigate to="/404" />} />
+    </Routes>
   );
 }
 
